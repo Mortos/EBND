@@ -1,0 +1,3 @@
+[submodule "rebar"]
+	path = rebar
+	url = https://github.com/basho/rebar.git
