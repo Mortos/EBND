@@ -4,7 +4,7 @@ Erlang Battle.net Daemon
 Building
 --------
 
-To build and install:
+To build:
 
 	$ cd rebar;
 	$ ./bootrap;
