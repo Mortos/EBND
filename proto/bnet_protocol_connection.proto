@@ -27,7 +27,7 @@ message bind_request
 
 message bind_response
 {
-    repeated uint32 imported_service_id = 1;
+    repeated uint32 imported_service_ids = 1;
 }
 
 message echo_request

@@ -1,0 +1,45 @@
+package bnet.protocol.invitation;
+
+import "bnet_protocol_attribute.proto";
+import "bnet_protocol_entity.proto";
+
+message invitation
+{
+    required fixed64 id = 1;
+    required entity.identity inviter = 2;
+    required entity.identity invitee = 3;
+    optional string inviter_name = 4;
+    optional string invitee_name = 5;
+    optional string message = 6;
+    optional uint64 creation_time = 7;
+    optional uint64 expiration_time = 8;
+}
+
+message suggestion
+{
+    optional entity.entity_id channel_id = 1;
+    required entity.entity_id suggester = 2;
+    required entity.entity_id suggestee = 3;
+    optional string suggester_name = 4;
+    optional string suggestee_name = 5;
+}
+
+message send_invitation_request
+{
+    optional entity.identity agent = 1;
+    required entity.entity_id target = 2;
+    optional string message = 3;
+    optional uint64 expiration_time = 4 [default = 0];
+}
+
+message send_invitation_response
+{
+    optional invitation invitation = 2;
+}
+
+message generic_request
+{
+    optional entity.entity_id agent = 1;
+    optional entity.entity_id target = 2;
+    required fixed64 invitation_id = 3;
+}

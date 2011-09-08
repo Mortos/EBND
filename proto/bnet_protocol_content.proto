@@ -9,5 +9,5 @@ message content_handle
 
 message path
 {
-    repeated uint32 ordinal = 1;
+    repeated uint32 ordinals = 1;
 }

@@ -29,5 +29,5 @@ enum attribute_operation
 message attribute_filter
 {
     required attribute_operation operation = 1;
-    repeated attribute attribute = 2;
+    repeated attribute attributes = 2;
 }
