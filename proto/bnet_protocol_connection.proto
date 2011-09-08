@@ -1,0 +1,63 @@
+package bnet.protocol.connection;
+
+import "bnet_protocol_rpc.proto";
+
+message connect_request
+{
+    optional rpc.process_id client_id = 1;
+}
+
+message connect_response
+{
+    required rpc.process_id server_id = 1;
+    optional rpc.process_id client_id = 2;
+}
+
+message bound_service
+{
+    required fixed32 hash = 1;
+    required uint32 id = 2;
+}
+
+message bind_request
+{
+    repeated fixed32 imported_service_hashes = 1;
+    repeated bound_service bound_exported_services = 2;
+}
+
+message bind_response
+{
+    repeated uint32 imported_service_id = 1;
+}
+
+message echo_request
+{
+    optional fixed64 time = 1;
+    optional bool network_only = 2 [default = false];
+    optional bytes payload = 3;
+}
+
+message echo_response
+{
+    optional fixed64 time = 1;
+    optional bytes payload = 2;
+}
+
+message disconnect_request
+{
+    required uint32 error_code = 1;
+}
+
+message disconnect_notification
+{
+    required uint32 error_code = 1;
+    optional string reason = 2;
+}
+
+message null_request
+{
+}
+
+message encrypt_request
+{
+}
