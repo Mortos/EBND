@@ -2,6 +2,7 @@
                          {vsn, "1"},
                          {registered, []},
                          {applications, [kernel,
-                                         stdlib]},
+                                         stdlib,
+                                         piqi]},
                          {mod, {ebnd_app, []}},
                          {env, []}]}.
