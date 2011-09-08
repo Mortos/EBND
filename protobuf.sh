@@ -24,7 +24,7 @@ cd proto;
 
 for proto in *.proto;
 do
-    ${PIQI} of-proto -o ../src/$proto.piqi $proto;
+    ${PIQI} of-proto -o ../piqi/$proto.piqi $proto;
 done;
 
 cd ..;
@@ -33,7 +33,7 @@ cd piqi;
 
 for piqi in *.piqi;
 do
-    ${PIQIC} erlang -C src $piqi;
+    ${PIQIC} erlang -C ../src $piqi;
 done;
 
 cd ..;

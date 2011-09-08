@@ -1,6 +1,8 @@
 *.beam
+src/*_piqi.*rl
 
 deps/*
+piqi/*
 ebin/*
 doc/*
 .eunit/*
