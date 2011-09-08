@@ -7,7 +7,7 @@ Building
 To build:
 
 	$ cd rebar;
-	$ ./bootrap;
+	$ ./bootstrap;
 	$ cd ..;
 	$ rebar/rebar get-deps;
 	$ rebar/rebar compile;
