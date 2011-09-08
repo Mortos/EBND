@@ -1,8 +1,14 @@
 #!/bin/sh
 
-# This file must be run under Rebar.
-PIQI=${REBAR_DEPS_DIR}/piqi/priv/bin-"`uname -s`-`uname -m`"/piqi
-PIQIC=${REBAR_DEPS_DIR}/piqi/priv/bin-"`uname -s`-`uname -m`"/piqic
+if [ -z $REBAR_DEPS_DIR ];
+then
+    echo "This script can only be run under Rebar.";
+    exit 1;
+fi;
+
+PIQIDIR=${REBAR_DEPS_DIR}/piqi/priv/bin-"`uname -s`-`uname -m`"
+PIQI=${PIQIDIR}/piqi
+PIQIC=${PIQIDIR}/piqic
 
 if ! [ -d proto ];
 then
