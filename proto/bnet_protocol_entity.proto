@@ -1,0 +1,14 @@
+package bnet.protocol.entity;
+
+message entity_id
+{
+    required fixed64 high = 1;
+    required fixed64 low = 2;
+}
+
+message identity
+{
+    optional entity_id account_id = 1;
+    optional entity_id game_account_id = 2;
+    optional entity_id toon_id = 3;
+}

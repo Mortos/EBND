@@ -1,0 +1,33 @@
+package bnet.protocol.attribute;
+
+message variant
+{
+    optional bool boolean_value = 2;
+    optional int64 int_value = 3;
+    optional double float_value = 4;
+    optional string string_value = 5;
+    optional bytes blob_value = 6;
+    optional bytes message_value = 7;
+    optional string fourcc_value = 8;
+    optional uint32 uint_value = 9;
+}
+
+message attribute
+{
+    required string name = 1;
+    required variant value = 2;
+}
+
+enum attribute_operation
+{
+    MATCH_NONE = 0;
+    MATCH_ANY = 1;
+    MATCH_ALL = 2;
+    MATCH_ALL_MOST_SPECIFIC = 3;
+}
+
+message attribute_filter
+{
+    required attribute_operation operation = 1;
+    repeated attribute attribute = 2;
+}

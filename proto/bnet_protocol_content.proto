@@ -1,0 +1,13 @@
+package bnet.protocol.content;
+
+message content_handle
+{
+    required fixed32 region = 1;
+    required fixed32 usage = 2;
+    required bytes hash = 3;
+}
+
+message path
+{
+    repeated uint32 ordinal = 1;
+}
