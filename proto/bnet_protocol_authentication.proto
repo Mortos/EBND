@@ -2,6 +2,7 @@ package bnet.protocol.authentication;
 
 import "bnet_protocol_content.proto";
 import "bnet_protocol_entity.proto";
+import "bnet_protocol_config.proto";
 
 message module_load_request
 {
