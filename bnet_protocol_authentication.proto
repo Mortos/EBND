@@ -1,0 +1,70 @@
+package bnet.protocol.authentication;
+
+import "bnet_protocol_content.proto";
+import "bnet_protocol_entity.proto";
+
+message module_load_request
+{
+    required content.content_handle handle = 1;
+    optional bytes data = 2;
+}
+
+message module_load_response
+{
+    optional int32 id = 2;
+}
+
+message module_message_request
+{
+    required int32 id = 1;
+    optional bytes data = 2;
+}
+
+message logon_request
+{
+    optional string program = 1;
+    optional string platform = 2;
+    optional string locale = 3;
+    optional string email = 4;
+    optional uint64 listener_id = 5;
+    optional string version = 6;
+}
+
+message logon_response
+{
+    required entity.entity_id account_id = 1;
+    required entity.entity_id game_account_id = 2;
+}
+
+message authentication_config
+{
+    repeated config.resource modules = 1;
+    repeated string allowed_versions = 2;
+    repeated string denied_versions = 3;
+    repeated config.resource agreement = 4;
+}
+
+message auth_module_variant
+{
+    required string platform = 1;
+    required string handle = 2;
+}
+
+message auth_module_config
+{
+    repeated auth_module_variant variants = 1;
+}
+
+message auth_agreement_locale
+{
+    required string id = 1;
+    required string handle = 2;
+}
+
+message auth_agreement
+{
+    required string type = 1;
+    required string program = 2;
+    required uint32 scheme = 3;
+    repeated auth_agreement_locale locales = 4;
+}
