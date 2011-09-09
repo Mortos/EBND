@@ -1,5 +1,7 @@
 package bnet.protocol.exchange;
 
+import "bnet_protocol_entity.proto";
+
 message partition_id
 {
     required fixed64 high = 1;
@@ -25,4 +27,48 @@ message blob_from_of_type
     required fixed32 source = 1;
     required string type = 2;
     required bytes data = 3;
+}
+
+message report_authorize_request
+{
+    required partition_id id = 1;
+    required partition_id token = 2;
+    required uint64 result = 3;
+    optional blob_from_of_type auth_handle = 4;
+    optional bool defer_delivery = 5;
+}
+
+message report_settle_request
+{
+    required partition_id id = 1;
+    required partition_id token = 2;
+    required uint64 result = 3;
+}
+
+message report_cancel_request
+{
+    required partition_id id = 1;
+    required partition_id token = 2;
+    required uint64 result = 3;
+}
+
+message get_payment_methods_request
+{
+    optional entity.entity_id bnet_account_id = 1;
+    optional entity.entity_id game_account_id = 2;
+    optional entity.entity_id toon_id = 3;
+    required string currency = 4;
+    required uint32 cash_in_out_mask = 5;
+}
+
+message payment_method
+{
+    required blob_from account = 1;
+    required string description = 2;
+    optional uint64 amount = 3;
+}
+
+message get_payment_methods_response
+{
+    repeated payment_method methods = 1;
 }
