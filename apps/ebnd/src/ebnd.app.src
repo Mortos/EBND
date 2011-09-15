@@ -4,5 +4,5 @@
                      {applications, [kernel,
                                      stdlib,
                                      piqi]},
-                     {mod, {ebnd, []}},
+                     {mod, {ebnd_app, []}},
                      {env, []}]}.

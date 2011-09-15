@@ -5,9 +5,7 @@
          stop/1]).
 
 start(_StartType, _StartArgs) ->
-    io:format("Hello World~n"),
-    ok.
-%    ebnd_sup:start_link().
+    ebnd_sup:start_link().
 
 stop(_State) ->
     ok.
