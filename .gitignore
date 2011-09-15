@@ -1,9 +1,8 @@
 *.beam
-src/*_piqi.*rl
-
+apps/*/src/*_piqi.*rl
 deps/*
-piqi/*
-ebin/*
-doc/*
-.eunit/*
+apps/*/piqi/*
+apps/*/ebin/*
+apps/*/doc/*
+apps/*/.eunit/*
 rel/ebnd/*
