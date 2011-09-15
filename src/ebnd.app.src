@@ -1,0 +1,8 @@
+{application, ebnd, [{description, "Erlang Battle.net Daemon"},
+                     {vsn, "1"},
+                     {registered, []},
+                     {applications, [kernel,
+                                     stdlib,
+                                     piqi]},
+                     {mod, {ebnd, []}},
+                     {env, []}]}.
