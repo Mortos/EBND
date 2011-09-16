@@ -21,13 +21,13 @@ message bound_service
 
 message bind_request
 {
-    repeated fixed32 imported_service_hashes = 1;
+    repeated fixed32 imported_service_hashes = 1 [packed = true];
     repeated bound_service bound_exported_services = 2;
 }
 
 message bind_response
 {
-    repeated uint32 imported_service_ids = 1;
+    repeated uint32 imported_service_ids = 1 [packed = true];
 }
 
 message echo_request

@@ -36,6 +36,7 @@ message report_authorize_request
     required uint64 result = 3;
     optional blob_from_of_type auth_handle = 4;
     optional bool defer_delivery = 5;
+    required entity.entity_id bnet_account_id = 6;
 }
 
 message report_settle_request

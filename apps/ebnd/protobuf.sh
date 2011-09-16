@@ -6,7 +6,7 @@ then
     exit 1;
 fi;
 
-PIQIDIR=${REBAR_DEPS_DIR}/piqi/priv/bin-"`uname -s`-`uname -m`"
+PIQIDIR=../../../deps/piqi/priv/bin-"`uname -s`-`uname -m`"
 PIQI=${PIQIDIR}/piqi
 PIQIC=${PIQIDIR}/piqic
 
