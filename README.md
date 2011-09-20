@@ -1,37 +1,48 @@
 Erlang Battle.net Daemon
 ========================
 
+Introduction
+------------
+
+EBND (Erlang Battle.net Daemon) is a daemon for servicing Battle.net 2.0 clients
+using the Google Protocol Buffers-based protocol (typically Diablo 3). It is
+written in Erlang, and therefore theoretically scales horizontally no matter how
+many clients you throw at it.
+
 Building
 --------
 
-To build:
+First of all, you need Rebar. You can install it yourself, or do:
 
 	$ cd rebar;
 	$ ./bootstrap;
-	$ cd ..;
-	$ rebar/rebar get-deps;
-	$ rebar/rebar compile;
+	$ cp rebar /usr/local/bin;
+
+To build:
+
+	$ rebar get-deps;
+	$ rebar compile;
 
 To update dependencies:
 
-	$ rebar/rebar update-deps;
+	$ rebar update-deps;
 
 To generate documentation:
 
-	$ rebar/rebar doc;
+	$ rebar doc;
 
 To do cross-reference analysis:
 
-	$ rebar/rebar xref;
+	$ rebar xref;
 
 To run tests:
 
-	$ rebar/rebar eunit;
+	$ rebar eunit;
 
 To generate a release:
 
-	$ rebar/rebar generate;
+	$ rebar generate;
 
 To clean up:
 
-	$ rebar/rebar clean;
+	$ rebar clean;
