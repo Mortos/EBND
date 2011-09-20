@@ -3,6 +3,7 @@
                      {registered, []},
                      {applications, [kernel,
                                      stdlib,
-                                     piqi]},
+                                     piqi,
+                                     sasl]},
                      {mod, {ebnd_app, []}},
                      {env, []}]}.
